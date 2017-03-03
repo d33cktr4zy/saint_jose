@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^saintjo.dev$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.saintjo.dev$
+RewriteCond %{REQUEST_URI} !public/ [OR]
+RewriteCond %{REQUST_FILENAME} !-d [OR]
+RewriteCond %{REQUST_FILENAME} !-f
+RewriteRule (.*) /public/$1 [L]
+</IfModule>

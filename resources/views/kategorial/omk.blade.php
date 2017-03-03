@@ -1,0 +1,17 @@
+@extends('template.utama')
+
+@section('content')
+	<h1>Orang Muda Katolik</h1>
+	<hr>
+	<img src="/images/omk.png" class="pull-left img-responsive" style="width: 69%; margin-right: 15px;">
+	<p class="text-justify">Yang dimaksud dengan OMK menurut Pedoman Karya Pastoral Kaum Muda (PKPKM) yang dikeluarkan Komisi Kepemudaan KWI adalah mereka yang berusia 13 s.d. 35 tahun dan belum menikah, sambil tetap memperhatikan situasi dan kebiasaan masing-masing daerah. OMK mencakup jenjang usia remaja, taruna dan pemuda. Kaum muda (youth, bhs. Ing) adalah kata kolektif untuk orang yang berada pada rentang umur 11-25 tahun37. Sedangkan Komisi Kepemudaan mengambil batas 13-35 tahun. Rentang umur ini merujuk pada buku “Pendidikan Politik Bagi Generasi Muda dan Keputusan Badan Koordinasi Penyelenggaraan Pembinaan dan Pengembangan Generasi Muda No. 01/BK tahun 1982 tentang Petunjuk Pelaksanaan Pendidikan Politik Bagi Generasi Muda” yang dikeluarkan oleh Kantor Menpora tahun 1985. Rentang umur tersebut menunjukkan bahwa kaum muda terdiri atas usia remaja sampai dengan dewasa awal. Rentang umur tersebut dikategorisasi lebih rinci demi efektivitas pendampingan. Kategorisasi tersebut sebagai berikut:</p>
+
+	<ul>
+	<li>Kelompok usia remaja (13 – 15 tahun)</li>
+<li>	Kelompok usia taruna (16 – 19 tahun)</li>
+	<li>Kelompok usia madya (20 – 24 tahun)</li>
+	<li>Kelompok usia karya (25 – 35 tahun)</li>
+	</ul>
+
+	<p class="text-justify">Dalam pendampingan OMK harus dipandang sebagai pribadi yang sedang berkembang. Mereka memiliki ciri khas dan keunikan yang tak tergantikan, kualitas, bakat dan minat yang perlu dihargai. Mereka mempunyai perasaan, pola pikir, tata nilai dan pengalaman tertentu, serta masalah dan kebutuhan yang perlu dipahami. Mereka memiliki hak dan kewajiban, tanggung jawab dan peran tersendiri yang perlu diberi tempat. Semua itu merupakan potensi untuk dikembangkan dalam proses pembinaan, sehingga kaum muda dapat berperan aktif-positif dalam kehidupan Keluarga, Gereja dan Masyarakatnya. Hendaknya OMK diberi kemungkinan, kesempatan, kepercayaan dan tanggung jawab sebagai subyek dan pelaku utama proses bina diri dan saling bina. Mereka bukan lagi bejana kosong yang perlu diisi atau lilin yang harus dibentuk menurut selera para pembina. Dengan demikian, segala bentuk pembinaan yang sifatnya menggiring, mendikte, mengobyekkan dan memperalat kaum muda demi suatu kepentingan di luar perkembangan diri mereka dan peran serta tersebut di atas haruslah dihindari dan dihilangkan. Hakekat pembinaan kaum muda, sebagai karya pastoral, adalah pelayanan dan pendampingan. Secara teritorial OMK, sebagai umat muda dalam suatu paroki adalah OMK paroki 22, walaupun mereka dapat juga menjadi anggota pelbagai wadah/kelompok/organisasi/gerakan kategorial sesuai minat, bakat dan keinginan mereka. Dengan demikian, dimanapun mereka aktif dan melibatkan diri, bahkan juga bila sama sekali belum aktif, secara teritorial merupakan warga paroki setempat dengan OMK paroki sebagai “home base” (pangkalan induk) mereka23. Oleh karena itu, OMK haruslah menjadi basis pembinaan serta sumber inspirasi dan motivasi untuk keterlibatan dalam berbagai wadah/ kelompok/organisasi/ gerakan kategorial, baik intern maupun ekstern gerejawi. Apabila konsep akomodatif OMK ini dipahami, maka pelbagai wadah/kelompok/organisasi/gerakan kaum muda katolik dalam berbagai tingkatan tidak perlu saling menganggap sebagai pesaing apalagi ancaman, melainkan justru sebagai kekayaan dan kekuatan OMK</p>
+@endsection

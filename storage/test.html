@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--head section nanti disini -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistem Informasi Gereja Katolik</title>
+
+    <!--css dan js disini -->
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="http://saintjo.dev/js/jquery-2.1.1.min.js"></script>
+
+    <script src="http://saintjo.dev/js/bootstrap.js"></script>
+
+
+
+    <link media="all" type="text/css" rel="stylesheet" href="http://saintjo.dev/css/bootstrap-datetimepicker.css">
+
+    <link media="screen" type="text/css" rel="stylesheet" href="http://saintjo.dev/css/bootstrap-theme.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="http://saintjo.dev/css/bootstrap.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="http://saintjo.dev/css/sigkat.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="http://saintjo.dev/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" media="all" href="https://fonts.googleapis.com/css?family=Hind+Siliguri">
+
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+
+    <script>
+        $(function() {
+            $('input[name=dataRange]').on('click init-post-format', function() {
+                if($('#data-range1').prop('checked')) {
+                    $('#data-filter').fadeIn();
+                }else if($('#data-range2').prop('checked')) {
+                    $('#data-filter').fadeOut();
+                }
+            }).trigger('init-post-format');
+        });
+    </script>
+</head>
+
+<body class="sigkat">
+<div class="container-fluid" id="mainContainer">
+    <!-- Header Section -->
+    <!--Header mulai disini -->
+    <div class="container" id="header">
+        <!-- TopNav mulai disini -->
+        <div class="row vertical-center" id="top-nav">
+            <div class="col-xs-5">
+                <!-- decide login or not -->
+                <div id="sessionNote" class="">
+                    <!-- Not Logged in-->
+                    <p>
+                        <a href="http://saintjo.dev/login">
+                            Login
+                        </a>
+                        /
+                        <a href="http://saintjo.dev/user/daftar/satu">
+                            Daftar
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- TopNav Selesai -->	<!-- Banner Mulai disini -->
+        <div class="row vertical-center" id="head-banner">
+            <div class="col-xs-12">
+
+            </div>
+        </div>
+        <!-- Banner selesai -->	<!-- Navbar Starts here-->
+        <div class="row vertical-center" id="navi-bar">
+            <div class="col-xs-9" id="navi">
+                <div class="btn-group btn-group-justified vertical-center">
+                    <ul class="dropdown-menu list-inline btn-group-justified" style="display: block;">
+                        <li>
+                            <a tabindex="-1" href="http://saintjo.dev">Home</a>
+                        </li>
+
+                        <li>
+                            <a tabindex="-1" href="http://saintjo.dev/forum">Forum</a>
+                        </li>
+
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Sakramen <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="http://saintjo.dev/sakremen/sakramenPermandian">
+                                        Sakramen Permandian
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://saintjo.dev/sakremen/sakramenKrisma">
+                                        Sakramen Krisma
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://saintjo.dev/sakremen/sakramenPerkawinan">
+                                        Sakramen Perkawinan
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Kategorial <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a tabindex="-1" href="http://saintjo.dev/kategorial/orangMudaKatolik(OMK)">
+                                        Orang Muda Katolik (OMK)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href="http://saintjo.dev/kategorial/anakSekolahMingguKatolik(ASMIKA)">
+                                        Anak Sekolah Minggu Katolik (ASMIKA)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href="http://saintjo.dev/kategorial/anakRemajaKatolik(AREKA)">
+                                        Anak Remaja Katolik (AREKA)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href="http://saintjo.dev/kategorial/misdinar">
+                                        Misdinar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href="http://saintjo.dev/kategorial/perkumpulanBapakBapakKatolik(KOMPAK)">
+                                        Perkumpulan Bapak-Bapak Katolik (KOMPAK)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href="http://saintjo.dev/kategorial/perkumpulanIbuIbuKaotolik(PIK)">
+                                        Perkumpulan Ibu-Ibu Kaotolik (PIK)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href="http://saintjo.dev/kategorial/perkumpulanDoaNarwastu">
+                                        Perkumpulan Doa Narwastu
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">St. Joseph <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a tabindex="-1" href="http://saintjo.dev/about/stasi">
+                                        Tentang Stasi St. Joseph Dr. Mansyur
+                                    </a>
+                                </li>
+
+                                <li class="divider"></li>
+
+                                <li>
+                                    <a tabindex="-1" href="http://saintjo.dev/about/dps">
+                                        Dewan Pengurus Stasi
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-3">
+
+
+            </div>
+        </div>
+        <!-- Navbar Selesai -->
+    </div>
+    <!-- Header selesai --><!-- Header selesai -->
+
+    <!-- konten mulai
+         konten tidak dalam file tersendiri karena nanti di render di halaman ini dengan yield
+    -->
+    <div class="container" id="konten">
+        <div class="row" id="isi">
+            <div class="col-lg-12">
+                <!-- Ini Isi Konten -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="btn-group btn-group-justified">
+                                        <ul class="dropdown-menu list-inline btn-group-justified" role="menu" aria-labelledby="dropdownMenu" style="display: block; position: inherit; margin-bottom: 5px; *width: 180px;">
+                                            <li class="dropdown-submenu">
+                                                <a tabindex="-1">Manajemen Konten <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li class="dropdown-submenu">
+                                                        <a>Manajemen Forum</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/forum/kategori">Kategori</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/forum/topik">Topik</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown-submenu">
+                                                        <a>Manajeman Pengumuman</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/pengumuman/new">Buat Baru</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/pengumuman/list">Lihat Pengumuman</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/pengumuman/jenis">Jenis Pengumuman</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown-submenu">
+                                                        <a>Manajeman Berita</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/berita/new">Buat Baru</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/berita/list">Lihat Berita</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown-submenu">
+                                                        <a>Manajeman Bacaan dan Doa</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/bacaan/new">Buat Baru</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/bacaan/list">Lihat Bacaan</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                                <a tabindex="-1">Manajemen Gereja <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li class="dropdown-submenu">
+                                                        <a>Manajemen Umat</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/umat/list">Lihat data Umat</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/umat/new">Tambah Umat</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown-submenu">
+                                                        <a>Manajemen Lingkungan</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://saintjo.dev/data/lingkungan">Lihat Data Lingkungan</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/lingkungan/keluarga">Lihat Data Keluarga</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown-submenu">
+                                                        <a>Kegiatan</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/kegiatan/list">Lihat kegiatan</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://saintjo.dev/admin/kegiatan/new">Tambah Baru</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                                <a tabindex="-1">Manajemen User <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <a href="http://saintjo.dev/admin/user/list">Lihat Daftar User</a>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h1>Data Umat Stasi St. Yoseph Dr. Mansyur</h1>
+                                <hr />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <form method="GET" action="http://saintjo.dev/admin/umat/list" accept-charset="UTF-8" role="form" name="filters">
+
+                                    <label class="control-label">Pilih cakupan data yang ingin ditampilkan</label>
+                                    <div class="radio" id="data-range">
+                                        <label class="control-label">
+                                            <input type="radio" name="dataRange" value="filtered" id="data-range1">
+                                            Filter
+                                        </label>
+                                        <label class="control-label">
+                                            <input type="radio" name="dataRange" value="all" id="data-range2">
+                                            Data Keseluruhan
+                                        </label>
+                                    </div>
+                                    <div class="panel" id="data-filter">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="checkbox">
+                                                        <label class="control-label">
+                                                            <input type="checkbox" name="lingCheck">
+                                                            Lingkungan
+                                                        </label>
+                                                    </div>
+                                                    <select class="form-control" name="lingOption">
+                                                        <option value="1">St. Paulus</option>
+                                                        <option value="2">St. Maria</option>
+                                                        <option value="3">St. Elisabeth</option>
+                                                        <option value="4">St. Theresia</option>
+                                                        <option value="5">St. Antonius</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="checkbox">
+                                                        <label class="control-label">
+                                                            <input type="checkbox" name="jkCheck">
+                                                            Jennis Kelamin
+                                                        </label>
+                                                    </div>
+                                                    <select class="form-control" name="jkOption">
+                                                        <option value="1">Laki-Laki</option>
+                                                        <option value="2">Perempuan</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="checkbox">
+                                                        <label class="control-label">
+                                                            <input id="umur" name="umur" type="checkbox">
+                                                            Umur
+                                                        </label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-5">
+                                                            <input class="form-control" name="muda" type="text">
+                                                        </div>
+                                                        <div class="col-xs-1">
+                                                            <p> - </p>
+                                                        </div>
+                                                        <div class="col-xs-5">
+                                                            <input class="form-control" name="tua" type="text">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-xs-offset-3">
+                            </div>
+                            <div class="col-xs-3">
+                                <button type="submit" class="btn btn-danger">
+                                    Tampilkan Data
+                                </button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table class="table">
+                                    <thead>
+                                    <tr style="display: table-row;">
+                                        <th>No</th>
+                                        <th>Nama</th>
+
+                                        <th>Jenis Kelamin</th>
+
+                                        <th>Tgl Lahir</th>
+                                        <th>Lingkungan</th>
+                                        <th>Alamat</th>
+                                        <th>Aksi</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            Anastasia Barton
+                                        </td>
+
+                                        <td>
+                                            Perempuan
+                                        </td>
+                                        <td>
+                                            11 Nov 1992
+                                        </td>
+                                        <td>
+                                            St. Paulus
+                                        </td>
+                                        <td>
+                                            856 Williamson Cove
+                                            Gwenmouth, VA 11287
+                                        </td>
+                                        <td>
+                                            <a href="http://saintjo.dev/admin/umat/1/edit"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;
+                                            <a href="#" data-href="http://saintjo.dev/admin/umat/1/delete" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>
+                                            Reagan Schaden
+                                        </td>
+
+                                        <td>
+                                            Laki-laki
+                                        </td>
+                                        <td>
+                                            18 Jul 2000
+                                        </td>
+                                        <td>
+                                            St. Maria
+                                        </td>
+                                        <td>
+                                            38901 Waters Harbor Apt. 679
+                                            Rueckerton, UT 75726-7044
+                                        </td>
+                                        <td>
+                                            <a href="http://saintjo.dev/admin/umat/2/edit"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;
+                                            <a href="#" data-href="http://saintjo.dev/admin/umat/2/delete" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>
+                                            Turner Veum
+                                        </td>
+
+                                        <td>
+                                            Perempuan
+                                        </td>
+                                        <td>
+                                            22 Aug 1991
+                                        </td>
+                                        <td>
+                                            St. Theresia
+                                        </td>
+                                        <td>
+                                            715 Bauch Passage Apt. 965
+                                            East Elliot, VA 14084-6714
+                                        </td>
+                                        <td>
+                                            <a href="http://saintjo.dev/admin/umat/3/edit"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;
+                                            <a href="#" data-href="http://saintjo.dev/admin/umat/3/delete" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>
+                                            Cassandra Hane
+                                        </td>
+
+                                        <td>
+                                            Perempuan
+                                        </td>
+                                        <td>
+                                            19 Nov 1999
+                                        </td>
+                                        <td>
+                                            St. Paulus
+                                        </td>
+                                        <td>
+                                            014 Kshlerin Pines Apt. 513
+                                            West Vince, TN 01950-2899
+                                        </td>
+                                        <td>
+                                            <a href="http://saintjo.dev/admin/umat/4/edit"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;
+                                            <a href="#" data-href="http://saintjo.dev/admin/umat/4/delete" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>
+                                            Liam Watsica
+                                        </td>
+
+                                        <td>
+                                            Laki-laki
+                                        </td>
+                                        <td>
+                                            16 Jun 1987
+                                        </td>
+                                        <td>
+                                            St. Paulus
+                                        </td>
+                                        <td>
+                                            96450 Bosco Tunnel Suite 453
+                                            Hillsmouth, CO 05875
+                                        </td>
+                                        <td>
+                                            <a href="http://saintjo.dev/admin/umat/5/edit"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;
+                                            <a href="#" data-href="http://saintjo.dev/admin/umat/5/delete" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>
+                                            Tyrese Frami
+                                        </td>
+
+                                        <td>
+                                            Laki-laki
+                                        </td>
+                                        <td>
+                                            30 Sep 1990
+                                        </td>
+                                        <td>
+                                            St. Paulus
+                                        </td>
+                                        <td>
+                                            648 Zemlak Circles Apt. 255
+                                            West Chanelle, HI 32460
+                                        </td>
+                                        <td>
+                                            <a href="http://saintjo.dev/admin/umat/6/edit"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;
+                                            <a href="#" data-href="http://saintjo.dev/admin/umat/6/delete" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>
+                                            Anibal Macejkovic
+                                        </td>
+
+                                        <td>
+                                            Laki-laki
+                                        </td>
+                                        <td>
+                                            26 May 1989
+                                        </td>
+                                        <td>
+                                            St. Maria
+                                        </td>
+                                        <td>
+                                            73481 Hilpert Plaza
+                                            Yostburgh, MA 35078
+                                        </td>
+                                        <td>
+                                            <a href="http://saintjo.dev/admin/umat/7/edit"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;
+                                            <a href="#" data-href="http://saintjo.dev/admin/umat/7/delete" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>
+                                            Keven Bauch
+                                        </td>
+
+                                        <td>
+                                            Perempuan
+                                        </td>
+                                        <td>
+                                            16 Jan 1994
+                                        </td>
+                                        <td>
+                                            St. Theresia
+                                        </td>
+                                        <td>
+                                            767 Kraig Point Apt. 387
+                                            Port Jazmyne, NY 91583
+                                        </td>
+                                        <td>
+                                            <a href="http://saintjo.dev/admin/umat/8/edit"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;
+                                            <a href="#" data-href="http://saintjo.dev/admin/umat/8/delete" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>
+                                            Abigail Prosacco
+                                        </td>
+
+                                        <td>
+                                            Laki-laki
+                                        </td>
+                                        <td>
+                                            15 Dec 1985
+                                        </td>
+                                        <td>
+                                            St. Elisabeth
+                                        </td>
+                                        <td>
+                                            14447 Weber Square Suite 185
+                                            Websterview, NH 68278-8331
+                                        </td>
+                                        <td>
+                                            <a href="http://saintjo.dev/admin/umat/9/edit"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;
+                                            <a href="#" data-href="http://saintjo.dev/admin/umat/9/delete" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>
+                                            Alec Stark
+                                        </td>
+
+                                        <td>
+                                            Perempuan
+                                        </td>
+                                        <td>
+                                            22 Oct 2000
+                                        </td>
+                                        <td>
+                                            St. Elisabeth
+                                        </td>
+                                        <td>
+                                            5057 Beatty Mews Apt. 032
+                                            South Elsa, SD 23220-0091
+                                        </td>
+                                        <td>
+                                            <a href="http://saintjo.dev/admin/umat/10/edit"><i class="fa fa-pencil"></i></a>
+                                            &nbsp;
+                                            <a href="#" data-href="http://saintjo.dev/admin/umat/10/delete" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                                <ul class="pagination"><li class="disabled"><span>&laquo;</span></li> <li class="active"><span>1</span></li><li><a href="http://saintjo.dev/admin/umat/list/?page=2">2</a></li><li><a href="http://saintjo.dev/admin/umat/list/?page=3">3</a></li><li><a href="http://saintjo.dev/admin/umat/list/?page=4">4</a></li><li><a href="http://saintjo.dev/admin/umat/list/?page=5">5</a></li><li><a href="http://saintjo.dev/admin/umat/list/?page=6">6</a></li><li><a href="http://saintjo.dev/admin/umat/list/?page=7">7</a></li><li><a href="http://saintjo.dev/admin/umat/list/?page=8">8</a></li><li class="disabled"><span>...</span></li><li><a href="http://saintjo.dev/admin/umat/list/?page=19">19</a></li><li><a href="http://saintjo.dev/admin/umat/list/?page=20">20</a></li> <li><a href="http://saintjo.dev/admin/umat/list/?page=2" rel="next">&raquo;</a></li></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-xs-3">
+                    <div class="">
+                        <div class="row">
+                            <div class="panel"
+                                 style="text-align: right; margin-right: 0px;">
+                                <div class="panel-body">
+                                    <div class="panel-heading"
+                                         style="display: block;">
+                                        <h4>User Statistik</h4>
+                                    </div>
+                                    <table class="table">
+                                        <tr style="display: table-row;">
+                                            <td>User Terdaftar</td>
+                                            <td>31</td>
+
+                                        </tr>
+                                        <tr style="display: table-row;">
+                                            <td>User Login 1Minggu</td>
+                                            <td>5</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="panel"
+                                 style="text-align: right; margin-right: 0px;">
+                                <div class="panel-body">
+                                    <div class="panel-heading"
+                                         style="display: block;">
+                                        <h4>Statistik Umat</h4>
+                                    </div>
+                                    <table class="table">
+                                        <tbody style="display: table-row-group;">
+                                        <tr style="display: table-row;">
+                                            <td>Jumlah Umat
+                                                <br>
+                                            </td>
+                                            <td style="display: table-cell;">200</td>
+                                        </tr>
+                                        <tr style="display: table-row;">
+                                            <td style="display: table-cell;">Jumlah Keluarga</td>
+                                            <td style="display: table-cell;">30</td>
+                                        </tr>
+                                        <tr style="display: table-row;">
+                                            <td style="display: table-cell;">Lingkungan</td>
+                                            <td style="display: table-cell;">
+                                                <br>
+                                            </td>
+                                        </tr>
+                                        <tr style="display: table-row;">
+                                            <td style="display: table-cell;">St. Paulus</td>
+                                            <td style="display: table-cell;">53</td>
+                                        </tr>
+                                        <tr style="display: table-row;">
+                                            <td style="display: table-cell;">St. Maria</td>
+                                            <td style="display: table-cell;">43</td>
+                                        </tr>
+                                        <tr style="display: table-row;">
+                                            <td style="display: table-cell;">St. Elisabeth</td>
+                                            <td style="display: table-cell;">43</td>
+                                        </tr>
+                                        <tr style="display: table-row;">
+                                            <td style="display: table-cell;">St. Theresia</td>
+                                            <td style="display: table-cell;">31</td>
+                                        </tr>
+                                        <tr style="display: table-row;">
+                                            <td style="display: table-cell;">St. Antonius</td>
+                                            <td style="display: table-cell;">30</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    ;
+
+                </div>
+                <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Konfirmasi</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Anda akan menghapus Pengumuman.</p>
+                                <p>Anda yakin?</p>
+                                <p class="debug-url"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <a class="btn btn-danger btn-ok">Delete</a>
+                            </div>
+                            <script>
+                                $('#confirm-delete').on('show.bs.modal', function(e) {
+                                    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+                                    $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- konten selesai -->
+
+    <!-- footer section start here -->
+    <div class="container" id="kaki">
+        <div class="row vertical-center">
+            <div class="col-xs-5 col-xs-offset-7" id="copyright"><p>Copyright <a href="mailto:gabriel.fermy@gmail.com">Gabriel Fermy Aswinta</a> @2015</p></div>
+        </div>
+    </div>
+
+    <!--footer end -->
+</div>
+
+</body>
+</html>
